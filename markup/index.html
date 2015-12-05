@@ -10,30 +10,36 @@
 </head>
 <body>
 	<div id="wrapper">
-		<section class="form-section win-height" id="hydra-login">
-			<form action="#" class="login-form">
-				<fieldset>
-					<h1><i class="fa fa-user"></i>Login</h1>
-					<div class="row">
-						<label for="username">Username:</label>
-						<input type="text" id="username" placeholder="Username....">
-					</div>
-					<div class="row">
-						<label for="password">Password:</label>
-						<input type="password" id="password" placeholder="Password ....">
-					</div>
-					<div class="row">
-						<button type="submit" id="login-submit"><i class="fa fa-sign-in"></i>login</button>
-					</div>
-				</fieldset>
-			</form>
-		</section>
+		<main id="main" role="main">
+			<section class="vertically-center win-height"  id="hydra-login">
+				<form action="#" class="login-form">
+					<fieldset>
+						<h1><i class="fa fa-user"></i>Login</h1>
+						<div class="row">
+							<label for="username">Username:</label>
+							<input type="text" id="username" placeholder="Username....">
+						</div>
+						<div class="row">
+							<label for="password">Password:</label>
+							<input type="password" id="password" placeholder="Password ....">
+						</div>
+						<div class="row">
+							<button type="submit" id="login-submit"><i class="fa fa-sign-in"></i>login</button>
+						</div>
+					</fieldset>
+				</form>
+			</section>
+			<section class="vertically-center" id="choose-category">
+				<div class="btn-groups">
+					<a href="#" class="btn">New Category</a>
+					<a href="#" class="btn">New Submenu</a>
+				</div>
+			</section>
+		</main>
 	</div>
-
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
 	<script type="text/javascript" src="js/jquery.main.js"></script>
 	<script type="text/javascript" src="js/hydra.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
-
 </body>
 </html>

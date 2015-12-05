@@ -48,6 +48,7 @@ var app = {
         console.log('Received Event: ' + id);
     },
     loginEvent:function(){
+      this.resetView();// resets all the view
       var loginSubmit = document.getElementById('login-submit');
       loginSubmit.addEventListener("click", this.checkLogin); // called after user clicks the login
     },
@@ -60,6 +61,10 @@ var app = {
         return;
       }
       hydra.login(username, password); // calles hydra for authentication
+    },
+    resetView:function(){
+      var menuSelection = document.getElementById('choose-category');
+          menuSelection.setAttribute('style', 'display:none;');
     }
 };
 

@@ -47,10 +47,12 @@
             window.localStorage.setItem("hydra-user", results.username);
             var loginElement = document.getElementById("hydra-login");
                 loginElement.setAttribute('style', 'display:none;');
+            var menuSelection = document.getElementById('choose-category');
+                menuSelection.setAttribute('style', 'display:block;');
          }
         //  console.log("resss", results.from);
        }
-    
+
      },
      //used to render the view
      renderList:function(list, params){
