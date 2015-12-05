@@ -10,6 +10,9 @@
        this.ajax('cp/login.php', dataString ,'POST', this.ajaxResult);
 
     },
+    showCategory:function(){
+      this.ajax('cp/category.php', "" ,'POST', this.ajaxResult);
+    },
     // used to call the ajax request
     ajax: function(url, params, method, cFunc) {
       var xRequest ;
@@ -39,6 +42,7 @@
 
      },
      ajaxResult:function(result){
+       console.log("resss", result);
        if(result == "error"){
 
        }else{
@@ -49,8 +53,13 @@
                 loginElement.setAttribute('style', 'display:none;');
             var menuSelection = document.getElementById('choose-category');
                 menuSelection.setAttribute('style', 'display:block;');
+         }else{
+              for (i = 0; i < results.length; i++) {
+                  //  console.log("Results is:-", results[i][1]); //this will result the data
+                  }
          }
-        //  console.log("resss", results.from);
+
+
        }
 
      },

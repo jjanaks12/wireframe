@@ -28,6 +28,8 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         this.loginEvent();
+        var showCatElement = document.getElementById('show-category');
+            showCatElement.addEventListener("click", this.showCategoryEvent);
     },
     // deviceready Event Handler
     //
@@ -36,6 +38,7 @@ var app = {
     onDeviceReady: function() {
 
         app.receivedEvent('deviceready');
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -51,6 +54,10 @@ var app = {
       this.resetView();// resets all the view
       var loginSubmit = document.getElementById('login-submit');
       loginSubmit.addEventListener("click", this.checkLogin); // called after user clicks the login
+    },
+    showCategoryEvent:function(e){
+      e.preventDefault();
+      hydra.showCategory();
     },
     checkLogin:function(e){
       e.preventDefault(); // used to prevent default action
