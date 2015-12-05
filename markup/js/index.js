@@ -49,13 +49,18 @@ var app = {
     },
     loginEvent:function(){
       var loginSubmit = document.getElementById('login-submit');
-      loginSubmit.addEventListener("click", this.checkLogin);
+      loginSubmit.addEventListener("click", this.checkLogin); // called after user clicks the login
     },
     checkLogin:function(e){
-      e.preventDefault();
-      console.log("login clicked");
+      e.preventDefault(); // used to prevent default action
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      if(username.length <= 0 || password.length <= 0){
+        console.log("Username and password cannot be null");
+        return;
+      }
+      hydra.login(username, password); // calles hydra for authentication
     }
 };
 
 app.initialize();
-hydra.login();
