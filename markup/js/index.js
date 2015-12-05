@@ -30,6 +30,9 @@ var app = {
         this.loginEvent();
         var showCatElement = document.getElementById('show-category');
             showCatElement.addEventListener("click", this.showCategoryEvent);
+        var showBillElement = document.getElementById('show-bill');
+            showBillElement.addEventListener("click", this.showBillEvent);
+
     },
     // deviceready Event Handler
     //
@@ -59,6 +62,10 @@ var app = {
       e.preventDefault();
       hydra.showCategory();
     },
+    showBillEvent:function(e){
+      e.preventDefault();
+      hydra.showBill();
+    },
     checkLogin:function(e){
       e.preventDefault(); // used to prevent default action
       var username = document.getElementById('username').value;
@@ -72,6 +79,8 @@ var app = {
     resetView:function(){
       var menuSelection = document.getElementById('choose-category');
           menuSelection.setAttribute('style', 'display:none;');
+      var showMenuSection = document.getElementById('show-menus');
+          showMenuSection.setAttribute('style','display:none;');
     }
 };
 

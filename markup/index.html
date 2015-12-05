@@ -8,10 +8,11 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link media="all" rel="stylesheet" href="css/main.css">
 </head>
-<body class="bill-active">
+<!-- <body class="bill-active"> -->
+<body class="" id="show-full-category">
 	<div id="wrapper">
 		<main id="main" role="main">
-			<section class="vertically-center win-height hidden">
+			<section class="vertically-center win-height" id="hydra-login">
 				<form action="#" class="login-form">
 					<fieldset>
 						<h1><i class="fa fa-user"></i>Login</h1>
@@ -29,7 +30,8 @@
 					</fieldset>
 				</form>
 			</section>
-			<section class="vertically-center win-height hidden">
+			<section class="vertically-center win-height" id="choose-category">
+			<!-- <section class="vertically-center win-height hidden"> -->
 				<div class="heading">
 					<a href="#" class="link"><i class="fa fa-sign-out"></i></a>
 					<h1>Add new Menu</h1>
@@ -39,7 +41,7 @@
 					<a href="#" id="show-menu" class="btn">New Submenu</a>
 				</div>
 			</section>
-			<section class="section">
+			<section class="section" id="show-menus">
 				<div class="heading">
 					<a href="#" class="link"><i class="fa fa-sign-out"></i></a>
 					<h1>List of Menu</h1>
@@ -137,7 +139,7 @@
 				</ul>
 				<div class="bill-section">
 					<div class="bill">
-						<a href="#" class="opener">
+						<a href="#" class="opener" id="show-bill">
 							<i class="fa fa-angle-double-left visible"></i>
 							<i class="fa fa-angle-double-right hidden"></i>
 						</a>

@@ -13,6 +13,21 @@
     showCategory:function(){
       this.ajax('cp/category.php', "" ,'POST', this.ajaxResult);
     },
+    showBill:function(){
+      //show the bill
+      var loginElement = document.getElementById("hydra-login");
+                loginElement.setAttribute('style', 'display:none;');
+      var menuSelection = document.getElementById('choose-category');
+                menuSelection.setAttribute('style', 'display:none;');
+      var billElement = document.getElementById('show-full-category');
+      if (document.querySelector('.bill-active') == null) {
+              // .. it exists
+              billElement.setAttribute('class','bill-active');
+          }else{
+              billElement.setAttribute('class','');
+          }
+
+    },
     // used to call the ajax request
     ajax: function(url, params, method, cFunc) {
       var xRequest ;
@@ -30,9 +45,7 @@
            {
               var response = xRequest.responseText;
                 cFunc(response);
-                // if(response == "error"){
-                //   console.log("an error ocuured");
-                // }
+
            }
           };
         xRequest.open(method, serverurl, "true");
@@ -57,6 +70,12 @@
               for (i = 0; i < results.length; i++) {
                   //  console.log("Results is:-", results[i][1]); //this will result the data
                   }
+            var loginElement = document.getElementById("hydra-login");
+                      loginElement.setAttribute('style', 'display:none;');
+            var menuSelection = document.getElementById('choose-category');
+                      menuSelection.setAttribute('style', 'display:none;');
+            var showMenuSection = document.getElementById('show-menus');
+                showMenuSection.setAttribute('style','display:block;');
          }
 
 
