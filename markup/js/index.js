@@ -28,6 +28,8 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         this.loginEvent();
+        var showCatElement = document.getElementById('show-category');
+            showCatElement.addEventListener("click", this.showCategoryEvent);
     },
     // deviceready Event Handler
     //
@@ -36,6 +38,7 @@ var app = {
     onDeviceReady: function() {
 
         app.receivedEvent('deviceready');
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -48,14 +51,28 @@ var app = {
         console.log('Received Event: ' + id);
     },
     loginEvent:function(){
+      this.resetView();// resets all the view
       var loginSubmit = document.getElementById('login-submit');
-      loginSubmit.addEventListener("click", this.checkLogin);
+      loginSubmit.addEventListener("click", this.checkLogin); // called after user clicks the login
+    },
+    showCategoryEvent:function(e){
+      e.preventDefault();
+      hydra.showCategory();
     },
     checkLogin:function(e){
-      e.preventDefault();
-      console.log("login clicked");
+      e.preventDefault(); // used to prevent default action
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      if(username.length <= 0 || password.length <= 0){
+        console.log("Username and password cannot be null");
+        return;
+      }
+      hydra.login(username, password); // calles hydra for authentication
+    },
+    resetView:function(){
+      var menuSelection = document.getElementById('choose-category');
+          menuSelection.setAttribute('style', 'display:none;');
     }
 };
 
 app.initialize();
-hydra.login();
