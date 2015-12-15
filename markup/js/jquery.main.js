@@ -1,3 +1,8 @@
+// page init
+jQuery(function(){
+	mobileMenu();
+});
+
 /*
  * Window Height CSS rules
  */
@@ -237,3 +242,21 @@ lib = {
 		return function() {return f.apply(scope, typeof forceArgs !== 'undefined' ? [forceArgs] : arguments);};
 	}
 };
+
+// open close
+
+function mobileMenu() {
+	var isActive = $('body').hasClass('bill-active');
+
+	$('body').find('.bill-opener').on("click", function(e){
+		e.preventDefault();
+		if(!isActive) {
+			$('body').addClass('bill-active');
+			isActive = true;
+		} else {
+			$('body').removeClass('bill-active');
+			isActive = false;
+		}
+		console.log("Bill active: "+isActive);
+	});
+}

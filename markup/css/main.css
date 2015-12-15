@@ -669,10 +669,6 @@ body {
 	margin-right: -15px;
 }
 
-.vertically-center.hidden {
-	display: none;
-}
-
 .heading {
 	text-align: center;
 	white-space: normal;
@@ -917,7 +913,7 @@ body {
 .bill-section:after {
 	content: "";
 	width: 1000%;
-	background: rgba(16, 9, 2, .9);
+	background: transparent;
 	top: 0;
 	bottom: 0;
 	left: 0;
@@ -936,7 +932,7 @@ body {
 	margin-bottom: 20px;
 }
 
-.bill-section .opener {
+.bill-section .bill-opener {
 	background: #5f5e35;
 	color: #fff;
 	width: 40px;
@@ -953,7 +949,7 @@ body {
 	z-index: 0;
 }
 
-.bill-section .opener .fa {
+.bill-section .bill-opener .fa {
 	margin: 8px 0 0 20px;
 }
 
@@ -1090,6 +1086,10 @@ body {
 .image-holder img {
 	max-width: 100%;
 	height: auto;
+}
+
+section.hidden {
+	display: none;
 }
 
 @media only screen and (min-width: 1025px) {

@@ -8,11 +8,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link media="all" rel="stylesheet" href="css/main.css">
 </head>
-<!-- <body class="bill-active"> -->
-<body class="" id="show-full-category">
+<body id="show-full-category">
 	<div id="wrapper">
 		<main id="main" role="main">
-			<section class="vertically-center win-height" id="hydra-login">
+			<section class="vertically-center win-height hidden" id="hydra-login">
 				<form action="#" class="login-form">
 					<fieldset>
 						<h1><i class="fa fa-user"></i>Login</h1>
@@ -30,8 +29,7 @@
 					</fieldset>
 				</form>
 			</section>
-			<section class="vertically-center win-height" id="choose-category">
-			<!-- <section class="vertically-center win-height hidden"> -->
+			<section class="vertically-center win-height hidden" id="choose-category">
 				<div class="heading">
 					<a href="#" class="link"><i class="fa fa-sign-out"></i></a>
 					<h1>Add new Menu</h1>
@@ -139,12 +137,12 @@
 				</ul>
 				<div class="bill-section">
 					<div class="bill">
-						<a href="#" class="opener" id="show-bill">
+						<a href="#" class="bill-opener" id="show-bill">
 							<i class="fa fa-angle-double-left visible"></i>
 							<i class="fa fa-angle-double-right hidden"></i>
 						</a>
 						<header class="header">
-							<h1>List</h1>
+							<h1>Bill</h1>
 						</header>
 						<div class="table-holder">
 							<table>
@@ -212,9 +210,8 @@
 			</section>
 		</main>
 	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
 	<script type="text/javascript" src="js/jquery.main.js"></script>
-	<script type="text/javascript" src="js/hydra.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
