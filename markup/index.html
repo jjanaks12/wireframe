@@ -4,8 +4,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Wireframe</title>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,800%7cPlayfair+Display:700' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,800%7cPlayfair+Display:700' rel='stylesheet' type='text/css'> -->
 	<link media="all" rel="stylesheet" href="css/fancybox.css">
+	<link media="all" rel="stylesheet" href="css/toolbar.css">
 	<link media="all" rel="stylesheet" href="css/main.css">
 </head>
 <body id="show-full-category" class="">
@@ -108,10 +109,7 @@
 				</section>
 				<div class="bill-section">
 					<div class="bill">
-						<a href="#" class="bill-opener" id="show-bill">
-							<i class="fa fa-angle-double-left visible"></i>
-							<i class="fa fa-angle-double-right hidden"></i>
-						</a>
+						<a href="#" class="bill-opener" id="show-bill"><i class="fa fa-angle-double-left"></i></a>
 						<header class="header">
 							<h1>Bill</h1>
 						</header>
@@ -129,21 +127,21 @@
 									<td>Pizza</td>
 									<td>1</td>
 									<td>$10.0</td>
-									<td><a href="#combo" rel="lightbox"><i class="fa fa-ellipsis-v"></i></a></td>
+									<td><a href="#" class="option"><i class="fa fa-ellipsis-v"></i></a></td>
 								</tr>
 								<tr>
 									<td>2</td>
 									<td>Pizza</td>
 									<td>1</td>
 									<td>$10.0</td>
-									<td><a href="#combo" rel="lightbox"><i class="fa fa-ellipsis-v"></i></a></td>
+									<td><a href="#" class="option"><i class="fa fa-ellipsis-v"></i></a></td>
 								</tr>
 								<tr>
 									<td>3</td>
 									<td>Pizza</td>
 									<td>1</td>
 									<td>$10.0</td>
-									<td><a href="#combo" rel="lightbox"><i class="fa fa-ellipsis-v"></i></a></td>
+									<td><a href="#" class="option"><i class="fa fa-ellipsis-v"></i></a></td>
 								</tr>
 							</table>
 						</div>
@@ -170,9 +168,9 @@
 								<span class="label">Grand Total</span>
 							</div>
 							<div class="btn-groups">
-								<a href="#discount" class="btn white" rel="lightbox">Discount</a>
-								<a href="#cancel-order" class="btn white" rel="lightbox">Cancel</a>
-								<a href="#" class="btn white">Delete</a>
+								<a href="#discount" class="btn white" rel="lightbox"><i class="fa fa-tag"></i>Discount</a>
+								<a href="#cancel-order" class="btn white" rel="lightbox"><i class="fa fa-ban"></i>Cancel</a>
+								<!-- <a href="#" class="btn white">Delete</a> -->
 							</div>
 							<div class="btn-groups">
 								<a href="#" class="btn">Cash</a>
@@ -234,7 +232,7 @@
 			</div>
 			<div id="discount" class="lightbox">
 				<div class="discount">
-					<h3>Pizza</h3>
+					<h3>Discount</h3>
 					<form action="#" class="discount-form">
 						<fieldset>
 							<div class="row">
@@ -257,7 +255,39 @@
 					<a href="#" class="btn">ok</a>
 				</div>
 			</div>
+			<div id="cancel-order" class="lightbox">
+				<h3>Cancel Order</h3>
+				<div class="center">
+					<p>Do you Want To Cancel Whole Order?</p>
+				</div>
+				<div class="btn-holder">
+					<a href="#" class="btn cancel">Cancel</a>
+					<a href="#" class="btn">ok</a>
+				</div>
+			</div>
+			<div id="delete-select" class="lightbox">
+				<strong class="title">Do you want to delete?</strong>
+				<div class="menu">
+					<div class="table-holder">
+						<table>
+							<tr>
+								<td>1</td>
+								<td>Pizza</td>
+								<td>$10.0</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="btn-holder">
+					<a href="#" class="btn cancel">Cancel</a>
+					<a href="#" class="btn">ok</a>
+				</div>
+			</div>
 		</div>
+	</div>
+	<div id="toolbar-options" class="hidden">
+	   <a href="#combo" rel="lightbox"><i class="fa fa-pencil"></i></a>
+	   <a href="#delete-select" rel="lightbox"><i class="fa fa-trash"></i></a>
 	</div>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>

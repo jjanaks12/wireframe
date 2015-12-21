@@ -3518,7 +3518,9 @@ body {
 }
 
 .accordion.active .drop {
-	display: block;
+	max-height: 600px;
+	opacity: 1;
+	visibility: visible;
 }
 
 .accordion h2 {
@@ -3526,7 +3528,12 @@ body {
 }
 
 .accordion .drop {
-	display: none;
+	overflow: hidden;
+	max-height: 0;
+	-webkit-transition: opacity 1s linear, max-height 1s linear;
+	transition: opacity 1s linear, max-height 1s linear;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .accordion-opener {
@@ -3584,12 +3591,10 @@ body {
 	position: absolute;
 }
 
-.bill-active .bill-section .hidden {
-	display: block;
-}
-
-.bill-active .bill-section .visible {
-	display: none;
+.bill-active .bill-opener .fa {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .bill-active .heading,
@@ -3606,6 +3611,7 @@ body {
 	transform: translateX(-300px);
 	-webkit-transition: -webkit-transform .3s linear;
 	transition: transform .3s linear;
+	box-shadow: 1px 0 10px rgba(16, 9, 2, .5);
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -3620,7 +3626,7 @@ body {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: -1;
+	z-index: -2;
 }
 
 .bill-section h1 {
@@ -3648,15 +3654,14 @@ body {
 	top: 0;
 	right: -20px;
 	bottom: 0;
-	z-index: 0;
+	z-index: -1;
+	box-shadow: 1px 0 10px rgba(16, 9, 2, .5);
 }
 
 .bill-section .bill-opener .fa {
-	margin: 8px 0 0 20px;
-}
-
-.bill-section .hidden {
-	display: none;
+	-webkit-transition: -webkit-transform .4s linear;
+	transition: transform .4s linear;
+	margin: 9px 0 0 20px;
 }
 
 .bill {
@@ -3690,15 +3695,16 @@ body {
 	text-align: center;
 }
 
-.table-holder a {
-	color: #fff;
+.table-holder .option {
+	color: #371d11;
+	font-size: 17px;
 	text-decoration: none;
 	-webkit-transition: color .3s linear;
 	transition: color .3s linear;
 }
 
-.table-holder a:hover {
-	color: #100902;
+.table-holder .option:hover {
+	color: #fff;
 }
 
 .meta {
@@ -3809,6 +3815,11 @@ body {
 	color: #386947;
 }
 
+.btn .fa {
+	font-size: 18px;
+	margin-right: 5px;
+}
+
 .image-holder img {
 	max-width: 100%;
 	height: auto;
@@ -3829,11 +3840,30 @@ section.hidden {
 	border-bottom: 8px solid #386947;
 }
 
+.lightbox .title {
+	background: #d9d9d9;
+	color: #100902;
+	text-align: center;
+	font-weight: 400;
+	display: block;
+	padding: 7px 5px 9px;
+	margin-bottom: 15px;
+	border-bottom: 8px solid #386947;
+}
+
 .discount,
 .menu {
 	max-width: 350px;
 	min-width: 280px;
 	min-height: 200px;
+}
+
+.center {
+	max-width: 350px;
+	min-width: 280px;
+	min-height: 200px;
+	text-align: center;
+	padding: 0 10px;
 }
 
 .discount-form,
